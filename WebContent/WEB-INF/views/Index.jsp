@@ -15,7 +15,7 @@
 				<h2>
 					${client.lastname}				
 				</h2>
-				<p>${clients}</p>
+				<p>${client}</p>
 			</div>
 		</c:forEach>
 	</div>
