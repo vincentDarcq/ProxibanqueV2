@@ -18,7 +18,7 @@ public class MySqlConnection {
 	public MySqlConnection(){
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/proxibanque2VB?serverTimezone=Europe/Paris", "root", "root");
+			this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/proxibanque2vb?serverTimezone=Europe/Paris", "root", "root");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
