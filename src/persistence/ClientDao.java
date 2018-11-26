@@ -17,7 +17,7 @@ public class ClientDao implements Dao<Client>{
 	
 
 	@Override
-<<<<<<< HEAD
+
 	public Client update(Client entity) {
 		try {
 			Statement st = this.mysqlConn.getConn().createStatement();
@@ -28,13 +28,14 @@ public class ClientDao implements Dao<Client>{
 		return entity;
 	}
 
-	@Override
 	public Client Transfer(Integer id) {
-		// TODO Auto-generated method stub
-=======
+		return null;
+		
+	}
+
 	public Client update(Integer id) {
 		
->>>>>>> 09cd2bdd4c7728cc80237e54b925516fcb39cd4e
+
 		return null;
 	}
 

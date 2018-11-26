@@ -26,10 +26,9 @@ public class ClientService {
 		this.dao.update(id);
 	}
 	
-	public List<Client> getAll() {
-		return this.dao.readAll();
+	
 		
 	}
 	
-	} 
+	 
  
