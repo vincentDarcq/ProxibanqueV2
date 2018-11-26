@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Liste des articles</h1>
+	<h1>Liste des clients</h1>
 	<div>
 		<c:forEach var="client" items="${clients}">
 			<div class="client">
