@@ -18,4 +18,8 @@ public class ClientService {
 		this.dao = new ClientDao();
 	}
 	
+	public void updateClient(Integer id) {
+		this.dao.update(id);
+	}
+	
 	} 

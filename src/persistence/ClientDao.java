@@ -31,8 +31,8 @@ public class ClientDao implements Dao<Client>{
 	}
 
 	@Override
-	public Client update(Client entity) {
-		// TODO Auto-generated method stub
+	public Client update(Integer id) {
+		
 		return null;
 	}
 
