@@ -17,5 +17,9 @@ public class ClientService {
 	public ClientService() {
 		this.dao = new ClientDao();
 	}
-	
+
+	public List<Client> getAll(){
+		return this.dao.readAll();
+	}	 
 	} 
+ 

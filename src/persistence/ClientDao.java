@@ -11,33 +11,48 @@ public class ClientDao implements Dao<Client>{
 
 	private MySqlConnection mysqlConn;
 	
-	@Override
-	public Client read(Integer id) {
-//		List<Client> results = new ArrayList<>();
-//		try {
-//			Statement st = this.mysqlConn.getConn().createStatement();
-//			ResultSet rs = st.executeQuery(SqlQuerries.READ_ALL_CLIENT);
-//			while(rs.next()) {
-//				Integer id = rs.getInt("id");
-//				String title = rs.getString("title");
-//				String content = rs.getString("content");
-//				results.add(new Client(id, title, content));
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//		return results; 
-		return null;
+	public ClientDao() {
+		this.mysqlConn = MySqlConnection.getInstance();
 	}
+	
 
 	@Override
 	public Client update(Client entity) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			Statement st = this.mysqlConn.getConn().createStatement();
+			ResultSet rs = st.executeQuery(SqlQuerries.UPDATE_CLIENT);
+		} catch (SQLException e) {
+			e.printStackTrace();
+					}		
+		return entity;
 	}
 
 	@Override
 	public Client Transfer(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Client> readAll() {
+		List<Client> clients = new ArrayList<>();
+		try {
+			Statement st = this.mysqlConn.getConn().createStatement();
+			ResultSet rs = st.executeQuery(SqlQuerries.READ_ALL_CLIENT);
+			while(rs.next()) {
+				String fn = rs.getString("firstname");
+				String lt = rs.getString("lastname");
+				String email = rs.getString("email");
+				String adress = rs.getString("address");
+				clients.add(new Client(fn, lt, email, adress));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return clients; 
+	}
+
+	@Override
+	public Client read(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
