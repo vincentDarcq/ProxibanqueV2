@@ -16,7 +16,7 @@ public class UpdateServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String strId = req.getParameter("id");
 		Integer id = Integer.parseInt(strId);
-		ClientService.getInstance().updateClient(id);
+		ClientService.getInstance().updateClient(null);
 		resp.sendRedirect(this.getServletContext().getContextPath() + "/index.html");
 		
 	}
