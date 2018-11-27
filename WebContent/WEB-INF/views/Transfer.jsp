@@ -57,36 +57,30 @@
     <h2 style="text-align:center">Détails du Client</h2>
     <form style="text-align:center" method="post" action="">
     	<div>
-    		<label for="lastname">Nom : </label>
-    		<input id="lastname" name="lastname" value="${client.lastname}">
+    		<label for="account">Compte à Débiter</label> <select id="accountA" name="accountA">
+    		<option label="-----" value=""/>
+    		<c:forEach var="account" items="${accounts}">
+    			<c:if test="${account.balance == f}">
+    				<option 
+    				label="Compte Courant - Numéro : ${account.compte} Solde : ${account.balance} &#8364"
+    				value="${account.id}" />
+    			</c:if>
+    			<c:if test="${account.balance == f}">
+    				<option 
+    				label="Compte Epargne - Numéro : ${account.compte} Solde : ${account.balance} &#8364"
+    				value="${account.id}" />
+    			</c:if>
+    		
+    		
+    		</c:forEach>
+    		
+    		
+    		</select>
     	</div>
-    	<div>
-    		<label for="firstname">Prénom : </label>
-    		<input id="firstname" name="firstname" value="${client.firstname}">
-    	</div>
-    	<div>
-    		<label for="email">Email : </label>
-    		<input id="email" name="email" value="${client.email}">
-    	</div>
-    	<div>
-    		<label for="address">Adresse : </label>
-    		<input id="address" name="address" value="${client.address}">
-    	</div>
-    	
-    	<select id="accounts" name="accounts">
-    	
-				<option label="----" value="" />
-				<option label="${client.compteA}" value="${client.compteA}" />
-				<option label="${client.accounts}" value="${client.compteB}" />
-		</select> 
-    	<button>Valider</button>
     </form>
     
   
     
-    
-    
-
     <!-- Footer -->
     <footer>
       <div class="container">

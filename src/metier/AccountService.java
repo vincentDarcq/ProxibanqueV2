@@ -36,5 +36,10 @@ public class AccountService{
 public void updateAccount (Account account) {
 	this.dao.update(account);
 }
+
+
+public Object getAccount(Integer id) {
+	return this.dao.read(id);
+}
  
 }
