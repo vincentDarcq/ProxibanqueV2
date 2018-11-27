@@ -13,6 +13,9 @@ public class IndexServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * doGet de IndexServlet récupère tous les clients de la BDD, grâce à la méthode getAll(), de ClientService
+	 */
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//Récupération du singleton d'ArticleService

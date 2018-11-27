@@ -16,19 +16,24 @@ import metier.ClientService;
 public class TransferServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+
 	private static final Logger LOGGER = Logger.getLogger(TransferServlet.class);
  
-	
+	/**
+	 * doGet de TransferServlet récupère un Client en fonction de sa PK id.
+	 */
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		ClientService service = ClientService.getInstance();
 		req.setAttribute("client", service.getClient(id));
-		this.getServletContext().getRequestDispatcher("/WEB-INF/views/transfer.jsp").forward(req,  resp);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/views/Transfer.jsp").forward(req, resp);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		String compteA = req.getParameter("compte débiteur");	
 		String compteB = req.getParameter("compte créditeur");
 		float amount = Float.parseFloat(req.getParameter("montant"));
@@ -45,6 +50,7 @@ public class TransferServlet extends HttpServlet {
 		else {
 			this.doGet(req, resp);
 		}
+		service.Transfer(compteA, compteB, amount);
 		resp.sendRedirect(this.getServletContext().getContextPath() + "/index.html");
 	}
 }

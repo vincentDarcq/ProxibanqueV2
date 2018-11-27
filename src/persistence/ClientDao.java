@@ -90,7 +90,7 @@ public class ClientDao implements Dao<Client> {
 			String updateBalanceB = String.format(SqlQuerries.UPDATE_ACCOUNT, newCompteB);
 			st.execute(updateBalanceB);
 		} catch (SQLException e) {
-			e.printStackTrace(); 
+			e.printStackTrace();  
 		}		return null;
 	}
 	} 

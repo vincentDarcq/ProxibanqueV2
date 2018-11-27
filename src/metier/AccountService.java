@@ -1,7 +1,6 @@
 package metier;
 
 import persistence.AccountDao;
-import persistence.ClientDao;
 
 public class AccountService{
 	

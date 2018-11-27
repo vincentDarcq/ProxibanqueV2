@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ProxiB.MAJ</title>
+    <title>ProxiB.TRANSFER</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-      	<c:url var="indexURL" value="/index.html"/>
+        <c:url var="indexURL" value="/index.html"/>
         <a class="navbar-brand js-scroll-trigger" href="${indexURL}">Retour Accueil</a>
       </div>
     </nav>
@@ -48,7 +48,7 @@
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
-          <div class="intro-heading text-uppercase">MISE A JOUR</div>
+          <div class="intro-heading text-uppercase">VIREMENT</div>
           
         </div>
       </div>
@@ -72,10 +72,21 @@
     		<label for="address">Adresse : </label>
     		<input id="address" name="address" value="${client.address}">
     	</div>
+    	
+    	<select id="accounts" name="accounts">
+    	
+				<option label="----" value="" />
+				<option label="${client.compteA}" value="${client.compteA}" />
+				<option label="${client.accounts}" value="${client.compteB}" />
+		</select> 
     	<button>Valider</button>
     </form>
     
+  
     
+    
+    
+
     <!-- Footer -->
     <footer>
       <div class="container">
@@ -115,7 +126,14 @@
         </div>
       </div>
     </footer>
+
+
+
+
  
+  
+
+   
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
