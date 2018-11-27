@@ -14,26 +14,27 @@ public class ClientDao implements Dao<Client>{
 	public ClientDao() {
 		this.mysqlConn = MySqlConnection.getInstance();
 	}
-	
-
-	@Override
-	public Client update(Client client) {
-		try {
-			Statement st = this.mysqlConn.getConn().createStatement();
-			ResultSet rs = st.executeQuery(SqlQuerries.UPDATE_CLIENT);
-		} catch (SQLException e) {
-			e.printStackTrace();
-					}		
-		return client;
-	}
 
 	public Client Transfer(Integer id) {
 		return null;
 		
 	}
 
-	public Client update(Integer id) {
-		return null;
+	public Client update(Client entity) {
+		try {
+			Statement st = this.mysqlConn.getConn().createStatement();
+			String queryFirstname = String.format(SqlQuerries.UPDATE_CLIENT, "firstname", entity.getFirstname(), entity.getId());
+			String queryLastname = String.format(SqlQuerries.UPDATE_CLIENT, "lastname", entity.getLastname(), entity.getId());
+			String queryEmail = String.format(SqlQuerries.UPDATE_CLIENT, "firstname", entity.getEmail(), entity.getId());
+			String queryAddress = String.format(SqlQuerries.UPDATE_CLIENT, "firstname", entity.getAddress(), entity.getId());
+			st.executeQuery(queryFirstname);
+			st.executeQuery(queryLastname);
+			st.executeQuery(queryEmail);
+			st.executeQuery(queryAddress);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return entity;
 	}
 	
 	public List<Client> readAll() {
