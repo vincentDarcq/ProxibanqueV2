@@ -16,5 +16,8 @@ public class SqlQuerries {
  * Requête de Mise à jour d'un ou plusieurs attributs d'un Client
  */
 	public static final String UPDATE_CLIENT = "UPDATE clients set %s='%s' WHERE id=%s;";
+	
+	public static final String BALANCE = "SELECT BALANCE FROM ACCOUNT WHERE id=%s;";
 
+	public static final String UPDATE_BALANCE = "UPDATE BALANCE SET %s='%s' WHERE id=%s;";
 }

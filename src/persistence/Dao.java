@@ -1,5 +1,6 @@
 package persistence;
 
+
 public interface Dao<T> {
 
 //	read est la méthode du CRUD pour lire une ligne de la table client
@@ -10,5 +11,9 @@ public interface Dao<T> {
 	
 //	transfer est la méthode faisant les virements compte à compte d'un client
 	public T Transfer(Integer id);
+
+	String Transfer(Integer id1, Integer id2, String compteA, String compteB, Float amount);
+
+
 	
 }

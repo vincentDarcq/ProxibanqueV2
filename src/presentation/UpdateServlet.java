@@ -21,6 +21,7 @@ public class UpdateServlet extends HttpServlet {
 		ClientService service = ClientService.getInstance();
 		req.setAttribute("client", service.getClient(id));
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/update.jsp").forward(req, resp);
+	
 	}
 	
 	/**
