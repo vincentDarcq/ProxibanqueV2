@@ -47,9 +47,6 @@
     </header>
     
     
-    
-    
-
     <!-- Footer -->
     <footer>
       <div class="container">
@@ -65,7 +62,7 @@
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.facebook.com/">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
@@ -89,14 +86,6 @@
         </div>
       </div>
     </footer>
-
-
-
-
- 
-  
-
-   
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

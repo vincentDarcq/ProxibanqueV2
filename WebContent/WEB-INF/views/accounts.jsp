@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ProxiB.MAJ</title>
+    <title>ProxiB.Accounts</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-      	<c:url var="indexURL" value="/index.html"/>
+        <c:url var="indexURL" value="/index.html"/>
         <a class="navbar-brand js-scroll-trigger" href="${indexURL}">Retour Accueil</a>
       </div>
     </nav>
@@ -48,32 +48,31 @@
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
-          <div class="intro-heading text-uppercase">MISE A JOUR</div>
+          <div class="intro-heading text-uppercase">LISTE DES COMPTES</div>
           
         </div>
       </div>
     </header>
     
-    <h2 style="text-align:center">Détails du Client</h2>
-    <form style="text-align:center" method="post" action="">
+    <div style="text-align:center" method="post" action="">
     	<div>
-    		<label for="lastname">Nom : </label>
-    		<input id="lastname" name="lastname" value="${client.lastname}">
+    		<label for="lastname">Type de Compte : </label>
+    		<input id="lastname" name="lastname" value="${comptes_client.type}">
     	</div>
     	<div>
     		<label for="firstname">Prénom : </label>
-    		<input id="firstname" name="firstname" value="${client.firstname}">
+    		<input id="firstname" name="firstname" value="${comptes_client.balance}">
     	</div>
     	<div>
-    		<label for="email">Email : </label>
-    		<input id="email" name="email" value="${client.email}">
+    		<label for="email">Numéro de Compte : </label>
+    		<input id="email" name="email" value="${comptes_client.compte}">
     	</div>
     	<div>
-    		<label for="address">Adresse : </label>
+    		<label for="address">Montant de Virement : </label>
     		<input id="address" name="address" value="${client.address}">
     	</div>
     	<button>Valider</button>
-    </form>
+    </div>
     
     
     <!-- Footer -->

@@ -37,7 +37,7 @@ public class ClientDao implements Dao<Client> {
 		return clients;
 	}
 	
-	/**
+	/**{@inheritDoc}
 	 * Cette méthode lit un client spécifique dans la Bdd.
 	 */
 
@@ -64,7 +64,7 @@ public class ClientDao implements Dao<Client> {
 		return client;
 	}
 
-	/**
+	/** {@inheritDoc}
 	 * Update sert à modifier un attribut spécifique d'un client présent dans la BDD.
 	 */
 	public Client update(Client entity) {

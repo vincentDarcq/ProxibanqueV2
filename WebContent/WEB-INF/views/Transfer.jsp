@@ -39,7 +39,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="http://localhost:8080/ProxibanqueV2/">Retour Accueil</a>
+        <c:url var="indexURL" value="/index.html"/>
+        <a class="navbar-brand js-scroll-trigger" href="${indexURL}">Retour Accueil</a>
       </div>
     </nav>
 

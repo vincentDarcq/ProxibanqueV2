@@ -14,14 +14,16 @@ public class TransferServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	
+	/**
+	 * doGet de TransferServlet récupère un Client en fonction de sa PK id.
+	 */
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		ClientService service = ClientService.getInstance();
 		req.setAttribute("client", service.getClient(id));
-		this.getServletContext().getRequestDispatcher("/WEB-INF/views/Transfer.jsp").forward(req,  resp);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/views/Transfer.jsp").forward(req, resp);
 	}
 	
 	@Override

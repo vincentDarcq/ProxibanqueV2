@@ -123,6 +123,7 @@
           <c:forEach var="client" items="${clients}">
           	<div class="col-md-4 col-sm-6 portfolio-item">
             	<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="transfer.html?id=${client.id}">Virement</a>
+            	<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="accounts.html?id=${client.id}">Comptes Associés</a>
             	<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="update.html?id=${client.id}">
             	
             	
@@ -174,12 +175,12 @@
               <p class="text-muted">Lead Designer</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="http://static1.purebreak.com/articles/9/57/05/9/@/196075-d-diapo-1.jpg">
                     <i class="fab fa-twitter"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://www.facebook.com/">
                     <i class="fab fa-facebook-f"></i>
                   </a>
                 </li>          
@@ -193,12 +194,12 @@
               <p class="text-muted">Advisor</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="http://static1.purebreak.com/articles/9/57/05/9/@/196075-d-diapo-1.jpg">
                     <i class="fab fa-twitter"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://www.facebook.com/">
                     <i class="fab fa-facebook-f"></i>
                   </a>
                 </li>
@@ -212,12 +213,12 @@
               <p class="text-muted">Advisor</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="http://static1.purebreak.com/articles/9/57/05/9/@/196075-d-diapo-1.jpg">
                     <i class="fab fa-twitter"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://www.facebook.com/">
                     <i class="fab fa-facebook-f"></i>
                   </a>
                 </li>
@@ -318,18 +319,13 @@
           <div class="col-md-4">
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="#">
+                <a href="http://static1.purebreak.com/articles/9/57/05/9/@/196075-d-diapo-1.jpg">
                   <i class="fab fa-twitter"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.facebook.com/">
                   <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>
             </ul>
