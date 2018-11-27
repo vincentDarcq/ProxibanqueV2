@@ -8,7 +8,9 @@ public class SqlQuerries {
 
 	public static final String UPDATE_CLIENT = "UPDATE clients set %s='%s' WHERE id=%s;";
 	
+	public static final String READ_ACCOUNT = "SELECT * FROM ACCOUNT WHERE id_client=%s;";
+	
 	public static final String BALANCE = "SELECT BALANCE FROM ACCOUNT WHERE id=%s;";
 
-	public static final String UPDATE_BALANCE = "UPDATE BALANCE SET %s='%s' WHERE id=%s;";
+	public static final String UPDATE_ACCOUNT = "UPDATE ACCOUNT SET compte='%s', balance='%s',  WHERE id=%s;";
 }

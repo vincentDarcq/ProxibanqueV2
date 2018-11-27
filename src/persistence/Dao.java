@@ -1,5 +1,6 @@
 package persistence;
 
+import metier.Client;
 
 public interface Dao<T> {
 
@@ -7,7 +8,7 @@ public interface Dao<T> {
 	
 	public T update(T id);
 	
-	String Transfer(Integer id1, Integer id2, String compteA, String compteB, Float amount);
+	Client Transfer(String compteA, String compteB, Float amount);
 
 	
 }

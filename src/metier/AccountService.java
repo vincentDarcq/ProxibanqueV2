@@ -1,8 +1,9 @@
 package metier;
 
+import persistence.AccountDao;
 import persistence.ClientDao;
 
-public class AccountService {
+public class AccountService{
 	
 	private static final AccountService INSTANCE = new AccountService();
 	
@@ -10,11 +11,31 @@ public class AccountService {
 		return AccountService.INSTANCE;
 	}
 	
-	private ClientDao dao;
-
-
-	public void Transfer(Integer idCompte1, Integer idCompte2, String compteA, String compteB, float amount) {
-		this.dao.Transfer(idCompte1, idCompte2, compteA, compteB, amount);
-		
+	private final AccountDao dao;
+	
+	public AccountService() {
+		this.dao = new AccountDao();
 	}
+
+
+	public boolean Transfer(String debit, String credit, Float amount) {
+		Account d = this.dao.read(debit);
+		Account c = this.dao.read(credit);
+		Float soldeD = d.getBalance();
+		Float soldeC = c.getBalance();
+		if(soldeD-amount<0)return false;
+		else {
+			d.setBalance(soldeD-amount);
+			c.setBalance(soldeC+amount);
+			this.updateAccount(d);
+			this.updateAccount(c);
+			return true;
+		}
+	}
+
+
+public void updateAccount (Account account) {
+	this.dao.update(account);
+}
+ 
 }

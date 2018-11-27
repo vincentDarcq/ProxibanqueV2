@@ -2,6 +2,8 @@ package presentation;
 
 
 import java.io.IOException;
+import org.apache.log4j.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,14 +12,15 @@ import metier.AccountService;
 import metier.ClientService;
 
 
+
 public class TransferServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-
+	private static final Logger LOGGER = Logger.getLogger(TransferServlet.class);
+ 
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		ClientService service = ClientService.getInstance();
 		req.setAttribute("client", service.getClient(id));
@@ -26,14 +29,22 @@ public class TransferServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
-		Integer id1 = Integer.parseInt(req.getParameter("id1"));
 		String compteA = req.getParameter("compte débiteur");	
-		Integer id2 = Integer.parseInt(req.getParameter("id2"));
 		String compteB = req.getParameter("compte créditeur");
 		float amount = Float.parseFloat(req.getParameter("montant"));
 		AccountService service = AccountService.getInstance();
-		service.Transfer(id1, id2, compteA, compteB, amount);
+		req.setAttribute("compte débiteur", compteA);
+		req.setAttribute("compte créditeur", compteB);
+		req.setAttribute("montant", amount);
+		String message = "montant supérieur au solde disponible.";
+		if(!service.Transfer(compteA, compteB, amount)) {
+			TransferServlet.LOGGER.info(message);
+			req.setAttribute("message",  message);
+			this.doGet(req, resp);
+		}
+		else {
+			this.doGet(req, resp);
+		}
 		resp.sendRedirect(this.getServletContext().getContextPath() + "/index.html");
 	}
 }
