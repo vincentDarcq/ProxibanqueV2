@@ -27,12 +27,13 @@ public class TransferServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		Integer id = Integer.parseInt(req.getParameter("id"));
-		String number = req.getParameter("compte à débiter");
-		String number2 = req.getParameter("compte à créditer");
+		Integer id1 = Integer.parseInt(req.getParameter("id1"));
+		String compteA = req.getParameter("compte débiteur");	
+		Integer id2 = Integer.parseInt(req.getParameter("id2"));
+		String compteB = req.getParameter("compte créditeur");
+		float amount = Float.parseFloat(req.getParameter("montant"));
 		AccountService service = AccountService.getInstance();
-		service.Transfer(id);
+		service.Transfer(id1, id2, compteA, compteB, amount);
 		resp.sendRedirect(this.getServletContext().getContextPath() + "/index.html");
 	}
-
 }

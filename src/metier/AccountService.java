@@ -11,8 +11,10 @@ public class AccountService {
 	}
 	
 	private ClientDao dao;
-	
-	public void Transfer(Integer id) {
-		this.dao.Transfer(id);
+
+
+	public void Transfer(Integer idCompte1, Integer idCompte2, String compteA, String compteB, float amount) {
+		this.dao.Transfer(idCompte1, idCompte2, compteA, compteB, amount);
+		
 	}
 }

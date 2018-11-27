@@ -7,7 +7,7 @@ public interface Dao<T> {
 	
 	public T update(T id);
 	
-	public T Transfer(Integer id);
+	String Transfer(Integer id1, Integer id2, String compteA, String compteB, Float amount);
 
 	
 }
