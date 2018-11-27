@@ -13,6 +13,9 @@ public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		Integer id = Integer.parseInt(req.getParameter("id"));
+		ClientService service = ClientService.getInstance();
+		req.getServletContext().getRequestDispatcher("/WEB-INF/views/update.jsp").forward(req, resp);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/update.jsp").forward(req,  resp);
 	}
 

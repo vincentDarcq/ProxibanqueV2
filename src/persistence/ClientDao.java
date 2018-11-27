@@ -18,7 +18,13 @@ public class ClientDao implements Dao<Client>{
 
 
 	@Override
-	public Client Transfer(Integer id) {
+	public Client Transfer(String number, String number2) {
+		try {
+			Statement st = this.mysqlConn.getConn().createStatement();
+			ResultSet rs = st.executeQuery(SqlQuerries.READ_ALL_CLIENT);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 	
@@ -28,6 +34,7 @@ public class ClientDao implements Dao<Client>{
 			Statement st = this.mysqlConn.getConn().createStatement();
 			ResultSet rs = st.executeQuery(SqlQuerries.READ_ALL_CLIENT);
 			while(rs.next()) {
+				Integer id = rs.getInt("id");
 				String fn = rs.getString("firstname");
 				String ln = rs.getString("lastname");
 				String email = rs.getString("email");
@@ -42,8 +49,21 @@ public class ClientDao implements Dao<Client>{
 
 	@Override
 	public Client read(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		Client client = new Client();
+		try {
+			Statement st = this.mysqlConn.getConn().createStatement();
+			ResultSet rs = st.executeQuery(SqlQuerries.READ_ALL_CLIENT);
+			while(rs.next()) {
+				String fn = rs.getString("firstname");
+				String ln = rs.getString("lastname");
+				String email = rs.getString("email");
+				String adress = rs.getString("address");
+				client.setFirstname(fn); client.setLastname(ln); client.setEmail(email); client.setAddress(adress);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return client;
 	}
 
 
@@ -64,11 +84,4 @@ public class ClientDao implements Dao<Client>{
 					}
 		return entity; 
 	}
-
-
-
-
-
-
-
 }
