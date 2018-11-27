@@ -5,25 +5,28 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import metier.Account;
+import metier.Client;
 
-public class AccountDao {
+public class AccountDao implements Dao<Account>{
 
 	private MySqlConnection mysqlConn;
 	
-	public Account read(String id) {
+	@Override
+	public Account read(Integer id) {
 		Account result = null;
 		Statement st;
 		try {
 			st = this.mysqlConn.getConn().createStatement();
 			ResultSet rs = st.executeQuery(String.format(SqlQuerries.READ_ACCOUNT, id));
 			rs.next();
+			String number = rs.getString("number");
 			Float balance = rs.getFloat("balance");
 			boolean savings = rs.getBoolean("savings");
-			result = new Account(id, balance, savings);
+			result = new Account(id, number, balance, savings);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return result;
+		return result; 
 	}
 	
 	public Account update(Account account) {
@@ -35,5 +38,13 @@ public class AccountDao {
 			e.printStackTrace();
 		}
 		return account;
+	}
+
+	
+
+	@Override
+	public Client Transfer(String compteA, String compteB, Float amount) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

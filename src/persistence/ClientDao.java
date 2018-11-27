@@ -16,6 +16,9 @@ public class ClientDao implements Dao<Client> {
 	}
 
 
+	/**Cette méthode affiche la liste de tous les clients.
+	 * @return
+	 */
 	public List<Client> readAll() {
 		List<Client> clients = new ArrayList<>();
 		try {
@@ -35,6 +38,9 @@ public class ClientDao implements Dao<Client> {
 		return clients;
 	}
 
+	/*méthode permettant de lire les informations d'un client.
+	 * @see persistence.Dao#read(java.lang.Integer)
+	 */
 	@Override
 	public Client read(Integer id) {
 		Client client = new Client();
@@ -54,6 +60,9 @@ public class ClientDao implements Dao<Client> {
 		return client;
 	} 
 
+	/*méthode permettant de mettre à jour les données d'un client.
+	 * @see persistence.Dao#update(java.lang.Object)
+	 */
 	public Client update(Client entity) {
 		try {
 			Statement st = this.mysqlConn.getConn().createStatement();
@@ -75,23 +84,12 @@ public class ClientDao implements Dao<Client> {
 		return entity;
 	}
 
+	/* 
+	 * @see persistence.Dao#Transfer(java.lang.String, java.lang.String, java.lang.Float)
+	 */
 	@Override
 	public Client Transfer(String compteA, String compteB, Float amount) {
-		try {
-			Statement st = this.mysqlConn.getConn().createStatement();
-			String queryCompteA = String.format(SqlQuerries.BALANCE);
-			st.execute(queryCompteA);
-			String queryCompteB = String.format(SqlQuerries.BALANCE);
-			st.execute(queryCompteB);
-			Float newCompteA =  Float.parseFloat(queryCompteA) - amount;
-			Float newCompteB =  Float.parseFloat(queryCompteB) + amount;
-			String updateBalanceA = String.format(SqlQuerries.UPDATE_ACCOUNT, newCompteA);
-			st.execute(updateBalanceA);
-			String updateBalanceB = String.format(SqlQuerries.UPDATE_ACCOUNT, newCompteB);
-			st.execute(updateBalanceB);
-		} catch (SQLException e) {
-			e.printStackTrace();  
-		}		return null;
+			return null;
 	}
 	} 
 

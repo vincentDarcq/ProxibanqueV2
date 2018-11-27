@@ -17,6 +17,8 @@ public class SqlQuerries {
  */
 	public static final String UPDATE_CLIENT = "UPDATE clients set %s='%s' WHERE id=%s;";
 	
+	public static final String READ_ALL_ACCOUNTS = "SELECT * FROM ACCOUNTS;";
+	
 	public static final String READ_ACCOUNT = "SELECT * FROM ACCOUNT WHERE id_client=%s;";
 	
 	public static final String BALANCE = "SELECT BALANCE FROM ACCOUNT WHERE id=%s;";
