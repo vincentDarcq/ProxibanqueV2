@@ -1,7 +1,14 @@
 package metier;
 
+import java.util.List;
+
 import persistence.AccountDao;
 
+/**
+ * Classe permettant de faire un lien entre comptes de la BDD à la couche présentation
+ * @author Adminl
+ *
+ */
 public class AccountService{
 	
 	private static final AccountService INSTANCE = new AccountService();
@@ -53,8 +60,8 @@ public class AccountService{
 		this.dao.update(account);
 		}
 	
-	public Object getAccount(Integer id) {
-		return this.dao.read(id);
+	public List<Account> getAccount(Integer id) {
+		return this.dao.readByClient(id);
 	} 
 
  

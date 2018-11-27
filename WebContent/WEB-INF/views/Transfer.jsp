@@ -57,26 +57,44 @@
     <h2 style="text-align:center">Détails du Client</h2>
     <form style="text-align:center" method="post" action="">
     	<div>
-    		<label for="account">Compte à Débiter</label> <select id="accountA" name="accountA">
+    		<label for="account">Compte à Débiter</label> <select id="accountA" name="compteA">
     		<option label="-----" value=""/>
     		<c:forEach var="account" items="${accounts}">
-    			<c:if test="${account.balance == f}">
+    			<c:if test="${account.savings}">
     				<option 
-    				label="Compte Courant - Numéro : ${account.compte} Solde : ${account.balance} &#8364"
+    				label="Compte Courant - Numéro : ${account.number} Solde : ${account.balance} &#8364"
     				value="${account.id}" />
     			</c:if>
-    			<c:if test="${account.balance == f}">
+    			<c:if test="${!account.savings}">
     				<option 
-    				label="Compte Epargne - Numéro : ${account.compte} Solde : ${account.balance} &#8364"
+    				label="Compte Epargne - Numéro : ${account.number} Solde : ${account.balance} &#8364"
     				value="${account.id}" />
     			</c:if>
-    		
-    		
     		</c:forEach>
-    		
-    		
     		</select>
     	</div>
+    	<div>
+    		<label for="account">Compte à Créditer</label> <select id="accountA" name="compteB">
+    		<option label="-----" value=""/>
+    		<c:forEach var="account" items="${accounts}">
+    			<c:if test="${account.savings}">
+    				<option 
+    				label="Compte Courant - Numéro : ${account.number} Solde : ${account.balance} &#8364"
+    				value="${account.id}" />
+    			</c:if>
+    			<c:if test="${!account.savings}">
+    				<option 
+    				label="Compte Epargne - Numéro : ${account.number} Solde : ${account.balance} &#8364"
+    				value="${account.id}" />
+    			</c:if>
+    		</c:forEach>
+    		</select>
+    	</div>
+    	<div>
+    		<label for="montant">Montant du Virement : </label>
+    		<input id="montant" name="montant" value="">
+    	</div>
+    	<button>Valider le Virement</button>
     </form>
     
   

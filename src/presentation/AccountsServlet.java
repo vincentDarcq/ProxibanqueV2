@@ -7,8 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import metier.ClientService;
+import metier.AccountService;
 
+
+/**Classe permettant l'interaction avec la page web affichant les comptes client.
+ * @author Adminl
+ *
+ */
 public class AccountsServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -19,9 +24,10 @@ public class AccountsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		Integer id = Integer.parseInt(req.getParameter("id"));
-		ClientService service = ClientService.getInstance();
-		req.setAttribute("client", service.getClient(id));
+		AccountService service = AccountService.getInstance();
+		req.setAttribute("accounts", service.getAccount(id));
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/accounts.jsp").forward(req, resp);
 	}
 
 }
+

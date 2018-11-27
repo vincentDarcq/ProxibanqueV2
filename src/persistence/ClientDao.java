@@ -11,6 +11,9 @@ public class ClientDao implements Dao<Client> {
 
 	private MySqlConnection mysqlConn;
 
+	/**
+	 *Constructeur d'initialisation. 
+	 */
 	public ClientDao() {
 		this.mysqlConn = MySqlConnection.getInstance();
 	}
@@ -84,12 +87,6 @@ public class ClientDao implements Dao<Client> {
 		return entity;
 	}
 
-	/* 
-	 * @see persistence.Dao#Transfer(java.lang.String, java.lang.String, java.lang.Float)
-	 */
-	@Override
-	public Client Transfer(String compteA, String compteB, Float amount) {
-			return null;
-	}
+	
 	} 
 

@@ -4,7 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-
+/**
+ * Classe permettant l'intéraction avec la BDD
+ * @author Adminl
+ *
+ */
 public class MySqlConnection {
 
 	private static MySqlConnection INSTANCE = new MySqlConnection();
@@ -15,6 +19,9 @@ public class MySqlConnection {
 	
 	private Connection conn;
 	
+	/**
+	 * Méthode permettant la connection à MySQL Workbench
+	 */
 	public MySqlConnection(){
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");

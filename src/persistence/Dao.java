@@ -2,6 +2,12 @@ package persistence;
 
 import metier.Client;
 
+/**
+ * Interface de déploiement 
+ * @author Adminl
+ *
+ * @param <T>
+ */
 public interface Dao<T> {
 
 //	read est la méthode du CRUD pour lire une ligne de la table client

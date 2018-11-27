@@ -4,6 +4,11 @@ import java.util.List;
 
 import persistence.ClientDao;
 
+/**
+ * Classe réalisant des liens ou ponts entre la couche métier et la couche Persistence
+ * @author Adminl
+ *
+ */
 public class ClientService {
 
 	private static final ClientService INSTANCE = new ClientService();

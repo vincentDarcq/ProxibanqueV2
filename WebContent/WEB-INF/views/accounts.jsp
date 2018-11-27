@@ -53,27 +53,20 @@
         </div>
       </div>
     </header>
-    
-    <div style="text-align:center" method="post" action="">
-    	<div>
-    		<label for="lastname">Type de Compte : </label>
-    		<input id="lastname" name="lastname" value="${comptes_client.type}">
-    	</div>
-    	<div>
-    		<label for="firstname">Prénom : </label>
-    		<input id="firstname" name="firstname" value="${comptes_client.balance}">
-    	</div>
-    	<div>
-    		<label for="email">Numéro de Compte : </label>
-    		<input id="email" name="email" value="${comptes_client.compte}">
-    	</div>
-    	<div>
-    		<label for="address">Montant de Virement : </label>
-    		<input id="address" name="address" value="${client.address}">
-    	</div>
-    	<button>Valider</button>
-    </div>
-    
+    <h1 style="text-align: center" class="display-4">
+    <c:forEach var="account" items="${accounts}">
+    	<c:if test="${account.savings}">
+    		<option 
+    			label="Compte Courant - Numéro : ${account.number} Solde : ${account.balance} &#8364"
+    			value="${account.id}" />
+    	</c:if>
+    	<c:if test="${!account.savings}">
+    		<option 
+    			label="Compte Epargne - Numéro : ${account.number} Solde : ${account.balance} &#8364"
+    			value="${account.id}" />
+    	</c:if>
+    </c:forEach>
+    </h1>
     
     <!-- Footer -->
     <footer>

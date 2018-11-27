@@ -18,11 +18,7 @@ public class IndexServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//Récupération du singleton d'ArticleService
 		ClientService service = ClientService.getInstance();
-		//Ajout d'un attribut de requête comportant la liste des clients.
-		//La clé "clients" utilisée permettra l'utilisation de l'expression
-		//$(clients) dans la index.jsp
 		req.setAttribute("clients", service.getAll());
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/Index.jsp").forward(req, resp);
 	}

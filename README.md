@@ -39,9 +39,14 @@ la page à gauche, sur "Retour Accueil". Cela vous raménera à la page d'accueil d
      4- Virement
 
   En cliquant sur l'onglet 'Virement' depuis la page d'accueil, vous atterrissez sur une page contenant des champs
-de sélection multiple.
+de sélection multiple. Vous devez sélectionné dans le premier champ le compte débiteur, et dans le deuxième champ, le compte
+créditeur. N'oubliez pas d'ajouter un montant de virement à la suite de ces sélections.
+Cliquer ensuite sur Valider persistera votre demande, et vous raménera à la page d'accueil.
 
-
+     5- Liste des Comptes
+	
+  En cliquant sur l'onglet 'Comptes Associés', vous atterrissez sur une nouvelle page où sont listés les différents comptes
+d'un client spécifique choisi. Pour retourner sur le menu d'accueil, cliquer sur l'onglet haut-gauche "Retour Accueil".
 
      x- Page d'Erreur
 
