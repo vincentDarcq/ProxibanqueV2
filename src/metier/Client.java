@@ -25,11 +25,22 @@ public class Client {
 	 * Liste des comptes du client.
 	 */
 	private List<Account> accounts;
-
+	
+	/**
+	 * Constructeur par défaut
+	 */
 	public Client() {
 		this.accounts = new ArrayList<>();
 	}
 	
+	/**
+	 * Constructeur d'initialisation
+	 * @param id
+	 * @param firstname
+	 * @param lastname
+	 * @param email
+	 * @param address
+	 */
 	public Client(Integer id, String firstname, String lastname, String email, String address) {
 		super();
 		this.id = id;
@@ -40,7 +51,13 @@ public class Client {
 	}
 
 
-
+	/**
+	 * Constructeur d'Initialisation
+	 * @param firstname
+	 * @param lastname
+	 * @param email
+	 * @param address
+	 */
 	public Client(String firstname, String lastname, String email,
 			String address) {
 		this();
@@ -49,6 +66,7 @@ public class Client {
 		this.email = email;
 		this.address = address;
 	}
+	
 
 	public Integer getId() {
 		return id;

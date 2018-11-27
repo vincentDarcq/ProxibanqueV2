@@ -43,7 +43,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Agence et Conseiller</a>
+              <a class="nav-link js-scroll-trigger" href="#services">Effectuer une Action</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">Service Client</a>
@@ -66,7 +66,7 @@
         <div class="intro-text">
           <div class="intro-lead-in">Bienvenue sur le système de Base de Données</div>
           <div class="intro-heading text-uppercase">PROXIBANQUE</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Effectuer Une Action</a>
+          
         </div>
       </div>
     </header>
@@ -86,16 +86,8 @@
               <i class="fas fa-circle fa-stack-2x text-primary"></i>
               <i class="fas fa-align-justify fa-stack-1x fa-inverse"></i>
             </span>
-            <a class="btn btn-primary btn-xl service-heading text-uppercase js-scroll-trigger" href="update.html">Mise à Jour Client</a>
+            <a class="btn btn-primary btn-xl service-heading text-uppercase js-scroll-trigger" href="#portfolio">Mise à Jour Client</a>
             <p class="text-muted">Mettre à jour une information de votre choix</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-            </span>
-            <a class="btn btn-primary btn-xl service-heading text-uppercase js-scroll-trigger" href="#portfolio">Liste des Comptes</a>
-            <p class="text-muted">Sélection depuis le nom d'un Client</p>
           </div>
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
@@ -130,13 +122,20 @@
         <div class="row">
           <c:forEach var="client" items="${clients}">
           	<div class="col-md-4 col-sm-6 portfolio-item">
-            	<a href="update.html?id=${client.id}">
+            	<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="transfer.html?id=${client.id}">Transfert</a>
+            	<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="update.html?id=${client.id}">
+            	
+            	
+            	
+            	
+            	
+            	
               		<div class="portfolio-hover">
                 		<div class="portfolio-hover-content">
                   		<i class="fas fa-plus fa-3x">Modifier</i>
                 		</div>
               		</div>
-              	<img class="img-fluid" src="https://images.unsplash.com/photo-1442412884322-bf142586405d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a194a57bebfeb9f22e51e6b855689533&auto=format&fit=crop&w=634&q=80" alt="">
+              	<img class="img-fluid" src="https://cdn1.iconfinder.com/data/icons/business-1-48/50/11-128.png" alt="">
             	</a>
             	<div class="portfolio-caption">
               		<h4>${client.firstname}</h4>

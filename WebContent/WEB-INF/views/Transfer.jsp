@@ -47,7 +47,7 @@
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
-          <div class="intro-heading text-uppercase">MISE A JOUR</div>
+          <div class="intro-heading text-uppercase">VIREMENT</div>
           
         </div>
       </div>

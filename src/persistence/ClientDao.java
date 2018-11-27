@@ -19,6 +19,9 @@ public class ClientDao implements Dao<Client> {
 		return null;
 
 	}
+	/**
+	 * Update sert à modifier un attribut spécifique d'un client présent dans la BDD.
+	 */
 
 	public Client update(Client entity) {
 		try {
@@ -27,19 +30,23 @@ public class ClientDao implements Dao<Client> {
 					entity.getId());
 			String queryLastname = String.format(SqlQuerries.UPDATE_CLIENT, "lastname", entity.getLastname(),
 					entity.getId());
-			String queryEmail = String.format(SqlQuerries.UPDATE_CLIENT, "firstname", entity.getEmail(),
+			String queryEmail = String.format(SqlQuerries.UPDATE_CLIENT, "email", entity.getEmail(),
 					entity.getId());
-			String queryAddress = String.format(SqlQuerries.UPDATE_CLIENT, "firstname", entity.getAddress(),
+			String queryAddress = String.format(SqlQuerries.UPDATE_CLIENT, "address", entity.getAddress(),
 					entity.getId());
-			st.executeQuery(queryFirstname);
-			st.executeQuery(queryLastname);
-			st.executeQuery(queryEmail);
-			st.executeQuery(queryAddress);
+			st.execute(queryFirstname);
+			st.execute(queryLastname);
+			st.execute(queryEmail);
+			st.execute(queryAddress);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return entity;
 	}
+	
+	/**
+	 * Cette méthode lit tous les clients dans la BDD.
+	 */
 
 	public List<Client> readAll() {
 		List<Client> clients = new ArrayList<>();
@@ -52,29 +59,30 @@ public class ClientDao implements Dao<Client> {
 				String lt = rs.getString("lastname");
 				String email = rs.getString("email");
 				String adress = rs.getString("address");
-				clients.add(new Client(fn, lt, email, adress));
+				clients.add(new Client(id, fn, lt, email, adress));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return clients;
 	}
+	
+	/**
+	 * Cette méthode lit un client spécifique dans la Bdd.
+	 */
 
 	@Override
 	public Client read(Integer id) {
 		Client client = new Client();
 		try {
 			Statement st = this.mysqlConn.getConn().createStatement();
-			ResultSet rs = st.executeQuery(SqlQuerries.READ_ALL_CLIENT);
+			ResultSet rs = st.executeQuery(String.format(SqlQuerries.READ_CLIENT, id));
 			while (rs.next()) {
 				String fn = rs.getString("firstname");
 				String lt = rs.getString("lastname");
 				String email = rs.getString("email");
 				String adress = rs.getString("address");
-				client.setFirstname(fn);
-				client.setLastname(lt);
-				client.setEmail(email);
-				client.setAddress(adress);
+				client = new Client(fn, lt, email, adress);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
