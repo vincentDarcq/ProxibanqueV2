@@ -122,7 +122,7 @@
         <div class="row">
           <c:forEach var="client" items="${clients}">
           	<div class="col-md-4 col-sm-6 portfolio-item">
-            	<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="transfer.html?id=${client.id}">Transfert</a>
+            	<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="transfer.html?id=${client.id}">Virement</a>
             	<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="update.html?id=${client.id}">
             	
             	

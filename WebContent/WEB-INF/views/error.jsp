@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page isErrorPage="true" language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ProxiB.TRANSFER</title>
+    <title>ERROR</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,12 +24,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/agency.min.css" rel="stylesheet">
-	<style>
-		body { background-image : url("https://images.unsplash.com/photo-1485627941502-d2e6429a8af0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=63e790aefbc8909865fd39d97a3c46ba&auto=format&fit=crop&w=1350&q=80");
-		background-repeat: repeat;
-		background-size: cover;}
-		
-	</style>
+	
   </head>
 
   <body id="page-top">
@@ -47,41 +40,12 @@
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
-          <div class="intro-heading text-uppercase">VIREMENT</div>
+          <div class="intro-heading text-uppercase">ProxiBanqueSI A RENCONTRE UNE ERREUR</div>
           
         </div>
       </div>
     </header>
     
-    <h2 style="text-align:center">Détails du Client</h2>
-    <form style="text-align:center" method="post" action="">
-    	<div>
-    		<label for="lastname">Nom : </label>
-    		<input id="lastname" name="lastname" value="${client.lastname}">
-    	</div>
-    	<div>
-    		<label for="firstname">Prénom : </label>
-    		<input id="firstname" name="firstname" value="${client.firstname}">
-    	</div>
-    	<div>
-    		<label for="email">Email : </label>
-    		<input id="email" name="email" value="${client.email}">
-    	</div>
-    	<div>
-    		<label for="address">Adresse : </label>
-    		<input id="address" name="address" value="${client.address}">
-    	</div>
-    	
-    	<select id="accounts" name="accounts">
-    	
-				<option label="----" value="" />
-				<option label="${client.compteA}" value="${client.compteA}" />
-				<option label="${client.accounts}" value="${client.compteB}" />
-		</select> 
-    	<button>Valider</button>
-    </form>
-    
-  
     
     
     

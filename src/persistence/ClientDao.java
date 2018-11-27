@@ -88,29 +88,23 @@ public class ClientDao implements Dao<Client> {
 		return entity;
 	}
 
-	@Override
-	public String Transfer(Integer id1, Integer id2,String compteA, String compteB, Float amount) {
+	public Client Transfer(String compteA, String compteB, Float amount) {
 		try {
 			Statement st = this.mysqlConn.getConn().createStatement();
-			String queryCompteA = String.format(SqlQuerries.BALANCE, id1);
+			String queryCompteA = String.format(SqlQuerries.BALANCE);
 			st.execute(queryCompteA);
-			String queryCompteB = String.format(SqlQuerries.BALANCE, id2);
+			String queryCompteB = String.format(SqlQuerries.BALANCE);
 			st.execute(queryCompteB);
 			Float newCompteA =  Float.parseFloat(queryCompteA) - amount;
 			Float newCompteB =  Float.parseFloat(queryCompteB) + amount;
-			String updateBalanceA = String.format(SqlQuerries.UPDATE_BALANCE, newCompteA, id1);
+			String updateBalanceA = String.format(SqlQuerries.UPDATE_BALANCE, newCompteA);
 			st.execute(updateBalanceA);
-			String updateBalanceB = String.format(SqlQuerries.UPDATE_BALANCE, newCompteB, id2);
+			String updateBalanceB = String.format(SqlQuerries.UPDATE_BALANCE, newCompteB);
 			st.execute(updateBalanceB);
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}		return compteB;
+		}		return null;
 	}
-
-	@Override
-	public Client Transfer(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	} 
 
