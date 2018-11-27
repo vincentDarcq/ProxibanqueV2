@@ -19,13 +19,13 @@ public class TransferServlet extends HttpServlet {
 
 	private static final Logger LOGGER = Logger.getLogger(TransferServlet.class);
  
+
 	/**
 	 * doGet de TransferServlet récupère un Client en fonction de sa PK id.
 	 */
-
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Integer id = req.getParameter("id");
+		Integer id = Integer.parseInt(req.getParameter("id"));
 		AccountService service = AccountService.getInstance();
 		req.setAttribute("accounts", service.getAccount(id));
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/Transfer.jsp").forward(req, resp);

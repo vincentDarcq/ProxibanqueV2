@@ -10,10 +10,5 @@ public interface Dao<T> {
 //	update est la méthode du CRUD pour modifier un attribut dans la table client.
 	public T update(T id);
 	
-
-
-//	transfer est la méthode faisant les virements compte à compte d'un client
-	Client Transfer(String compteA, String compteB, Float amount);
-
 	
 }

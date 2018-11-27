@@ -8,15 +8,22 @@ public class ClientService {
 
 	private static final ClientService INSTANCE = new ClientService();
 
+	/**méthode qui récupère le singleton.
+	 * @return
+	 */
 	public static ClientService getInstance() {
 		return ClientService.INSTANCE;
 	}
 
 	private final ClientDao dao;
 
+	/**
+	 * Constructeur d'initialisation.
+	 */
 	public ClientService() {
 		this.dao = new ClientDao();
 	}
+
 
 	/**
 	 * Cette méthode est un pont vers la méthode readAll, on l'utilise en liant
@@ -24,10 +31,10 @@ public class ClientService {
 	 * 
 	 * @return
 	 */
-
 	public List<Client> getAll() {
 		return this.dao.readAll();
 	}
+
 
 	/**
 	 * updateClient est la méthode qui prend en paramètre tous les attributs d'un
@@ -39,7 +46,6 @@ public class ClientService {
 	 * @param email
 	 * @param address
 	 */
-
 	public void updateClient(Integer id, String firstname, String lastname, String email, String address) {
 		Client client = new Client(id, firstname, lastname, email, address);
 		this.dao.update(client);
