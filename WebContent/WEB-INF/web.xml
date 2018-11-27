@@ -14,5 +14,25 @@
 		<servlet-name>IndexServlet</servlet-name>
 		<url-pattern>/index.html</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UpdateServlet</servlet-name>
+		<servlet-class>presentation.UpdateServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UpdateServlet</servlet-name>
+		<url-pattern>/update.html</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>TransferServlet</servlet-name>
+		<servlet-class>presentation.TransferServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>TransferServlet</servlet-name>
+		<url-pattern>/transfer.html</url-pattern>
+	</servlet-mapping>
 
 </web-app>

@@ -7,7 +7,7 @@ public interface Dao<T> {
 	
 	public T update(T id);
 	
-	public T Transfer(String number, String number2);
+	public T Transfer(Integer id);
 
 	
 }

@@ -21,7 +21,7 @@ public class IndexServlet extends HttpServlet {
 		//La clé "clients" utilisée permettra l'utilisation de l'expression
 		//$(clients) dans la index.jsp
 		req.setAttribute("clients", service.getAll());
-		this.getServletContext().getRequestDispatcher("/WEB-INF/views/Index.jsp").forward(req,  resp);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/views/Index.jsp").forward(req, resp);
 	}
 
 }
